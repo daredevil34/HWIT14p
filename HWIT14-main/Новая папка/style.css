@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.main {
+    background-color: rgb(67, 67, 255);
+    width: 500px;
+    height: 600px;
+    border-radius: 10px;
+    margin-top: 100px;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.image_block {
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    width: calc(100% - 30px);
+}
+.text {
+    margin: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
+.text::after {
+    content: '';
+    border: 20px solid rgba(255, 0, 0, 0);
+    border-right: 20px solid rgba(255, 0, 0, 0);
+    height: 0;
+    width: 0;
+    position: absolute;
+    transform: rotate(0deg);
+    left: 360px;
+    transition: all .5s;
+}
+.text::before {
+    content: '';
+    border: 20px solid rgba(255, 0, 0, 0);
+    border-left: 20px solid rgba(255, 0, 0, 0);
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: 130px;
+    transform: rotate(180deg);
+    transition: all .5s;
+}
+.main:hover .text::before {
+    border-left: 20px solid rgb(255, 0, 0);
+    transform: rotate(0deg);
+    left: 150px;
+}
+.main:hover .text::after {
+    border-left: 20px solid rgb(255, 0, 0);
+    transform: rotate(180deg);
+    left: 340px;
+}
+.text:hover.text::after {
+    transform: rotate(0deg);
+    left: 360px;
+}
+.text:hover.text::before {
+    left: 130px;
+    transform: rotate(180deg);
+}
